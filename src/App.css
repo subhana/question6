@@ -1,0 +1,168 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.container {
+  margin: 30px auto;
+  width: 400px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+}
+
+.add-task {
+  display: flex;
+  color: #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.add-task .down-arrow {
+  width: 7%;
+  padding: 10px 0;
+}
+
+.add-task input {
+  width: 90%;
+  font-size: inherit;
+  padding: 10px 0;
+  border: 0;
+}
+
+.add-task input:focus {
+  color: #5a5a5a;
+  outline: none;
+}
+
+.task-list {
+  margin-top: 8px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.task-item .check-complete {
+  width: 40px;
+}
+
+.task-item .text {
+  text-align: left;
+  width: 250px;
+}
+
+.task-item .edit {
+  color: #5a5a5a;
+}
+
+.task-item .edit:focus {
+  outline: 1px solid #6a6a6a;
+}
+
+.task-item .remove {
+  width: 70px;
+}
+
+.task-item .remove button {
+  border: none;
+  color: #6a6a6a;
+  background-color: transparent;
+}
+
+.task-item .remove button:hover {
+  cursor: pointer;
+}
+
+.task-item .remove button:focus {
+  outline: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #e1e1e1;
+}
+
+.not-completed {
+  color: #5a5a5a;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  color: #6a6a6a;
+  margin: 6px 0;
+}
+
+.footer-container .items-left {
+  width: 80px;
+}
+
+.footer-container .filter-buttons {
+  width: 230px;
+}
+
+.footer-container .filter-buttons button {
+  border: none;
+  color: #6a6a6a;
+  background-color: transparent;
+}
+
+.footer-container .filter-buttons button:hover {
+  cursor: pointer;
+}
+
+.footer-container .filter-buttons button:focus, .footer-container .filter-buttons .active-filter {
+  outline: none;
+  border: 1px solid #b4b4b4;
+  border-radius: 2px;
+}
+
+.footer-container .clear-completed {
+  width: 120px;
+}
+
+.footer-container .clear-completed a {
+  color: #6a6a6a;
+  text-decoration: none;
+}
+
+.footer-container .clear-completed a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
