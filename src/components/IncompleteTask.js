@@ -1,10 +1,10 @@
 import React from 'react';
 
-const IncompleteTask = ({ taskList }) => {
+const IncompleteTask = ({ tasks }) => {
 
-  const getIncompleteTaskInfo = (taskList) => {
+  const getIncompleteTaskInfo = (tasks) => {
 
-    const incompleteTasks = taskList.filter((task, idx) =>
+    const incompleteTasks = tasks.filter((task, idx) =>
       task.isComplete === false
     )
     const incompleteTaskCount = incompleteTasks.length;
@@ -15,7 +15,7 @@ const IncompleteTask = ({ taskList }) => {
 
   return (
     <div className="items-left">
-      {getIncompleteTaskInfo(taskList)} left
+      {getIncompleteTaskInfo(tasks)} left
     </div>
   );
 }

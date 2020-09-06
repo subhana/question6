@@ -1,7 +1,11 @@
 import React from 'react';
-import TaskItem from './TaskItem';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const TaskList = ({ tasks, completeTask, editTask, deleteTask, filterValue }) => {
+import TaskItem from './TaskItem';
+import * as taskActions from '../redux/actions/taskActions';
+
+const TaskList = ({ tasks, completeTask, editTask, deleteTask, selectedFilter }) => {
 
   return tasks.length>0 && (
     <div className="task-list">
@@ -16,7 +20,7 @@ const TaskList = ({ tasks, completeTask, editTask, deleteTask, filterValue }) =>
           deleteTask={deleteTask}
         />)
 
-        switch (filterValue) {
+        switch (selectedFilter) {
           case 'active':
             return (task.isComplete === false) && taskListTemplate;
           case 'completed':
@@ -29,4 +33,19 @@ const TaskList = ({ tasks, completeTask, editTask, deleteTask, filterValue }) =>
   );
 }
 
-export default TaskList;
+function mapStateToProps(state, ownPorps) {
+  return {
+    tasks: state.tasks,
+    selectedFilter: state.filters.selectedFilter
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    completeTask: bindActionCreators(taskActions.completeTask, dispatch),
+    editTask: bindActionCreators(taskActions.editTask, dispatch),
+    deleteTask: bindActionCreators(taskActions.deleteTask, dispatch),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TaskList);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ClearCompletedTask = ({ tasks, deletCompletedTask }) => {
+const ClearCompletedTask = ({ tasks, deleteCompletedTask }) => {
 
   const hasCompletedTasks = () => {
     const completedTasks = tasks.filter((task) =>
@@ -10,7 +10,7 @@ const ClearCompletedTask = ({ tasks, deletCompletedTask }) => {
   }
 
   const handleClearCompletedClick = () => {
-    deletCompletedTask();
+    deleteCompletedTask();
   }
 
   return (

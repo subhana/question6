@@ -1,30 +1,30 @@
 import React from 'react';
 
-const Filter = ({ filterValue, setFilterValue }) => {
+const Filter = ({ selectedFilter, setSelectedFilter }) => {
 
-  const handleFilterClick = (status) => {
-    setFilterValue(status);
+  const handleFilterClick = (newFilter) => {
+    setSelectedFilter(newFilter);
   }
 
   return (
     <div className="filter-buttons">
       <button
         type="button"
-        className={`${filterValue === 'all' ? 'active-filter' : ''}`}
+        className={`${selectedFilter === 'all' ? 'active-filter' : ''}`}
         onClick={() => {handleFilterClick('all')}}>
 
         All
       </button>
       <button
         type="button"
-        className={`${filterValue === 'active' ? 'active-filter' : ''}`}
+        className={`${selectedFilter === 'active' ? 'active-filter' : ''}`}
         onClick={() => {handleFilterClick('active')}}>
 
         Active
       </button>
       <button
         type="button"
-        className={`${filterValue === 'completed' ? 'active-filter' : ''}`}
+        className={`${selectedFilter === 'completed' ? 'active-filter' : ''}`}
         onClick={() => {handleFilterClick('completed')}}>
 
         Completed
